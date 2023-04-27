@@ -2,6 +2,7 @@ package ru.nsu.gorin.db.realestateaccounting.controllers;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,7 +19,8 @@ public class ObjectRegistryController {
 
     private final ObjectRegistryService objectRegistryService;
 
-    @GetMapping("objects")
+    @GetMapping("/objects")
+    @PreAuthorize("hasAnyRole('EXECUTOR', 'INSPECTOR')")
     public ResponseEntity<?> getObjectList(@RequestParam(defaultValue = "0") int pageNumber,
                                            @RequestParam(defaultValue = "10") int pageSize) {
         try {
@@ -28,7 +30,8 @@ public class ObjectRegistryController {
         }
     }
 
-    @PostMapping("objects-by-filter")
+    @PostMapping("/objects-by-filter")
+    @PreAuthorize("hasAnyRole('EXECUTOR', 'INSPECTOR')")
     public ResponseEntity<?> getObjectListByFilter(@RequestParam(defaultValue = "0") int pageNumber,
                                                    @RequestParam(defaultValue = "10") int pageSize,
                                                    @RequestBody FilterDTO filterDTO) {
