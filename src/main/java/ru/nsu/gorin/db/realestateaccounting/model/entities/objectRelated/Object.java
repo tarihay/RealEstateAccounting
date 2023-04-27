@@ -48,9 +48,6 @@ public class Object {
     private String actualUser;
 
     @OneToMany(mappedBy = "object")
-    private List<Attachment> attachments;
-
-    @OneToMany(mappedBy = "object")
     private List<Solution> solutions;
 
     @OneToMany(mappedBy = "object")

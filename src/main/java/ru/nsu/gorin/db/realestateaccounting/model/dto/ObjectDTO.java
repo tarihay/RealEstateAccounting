@@ -19,7 +19,6 @@ public class ObjectDTO {
     private Double area;
     private String actualUser;
     private String owner;
-    private List<AttachmentDTO> attachments;
     private List<CustomFieldDTO> customFields;
 
     public ObjectDTO(List<CustomFieldDTO> customFields) {
