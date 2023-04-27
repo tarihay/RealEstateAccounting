@@ -9,7 +9,6 @@ import org.springframework.security.core.GrantedAuthority;
 
 import java.util.List;
 
-@Data
 @Entity
 @Table(name = "Role")
 public class Role implements GrantedAuthority {

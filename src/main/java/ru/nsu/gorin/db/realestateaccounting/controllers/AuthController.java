@@ -1,5 +1,6 @@
 package ru.nsu.gorin.db.realestateaccounting.controllers;
 
+import jakarta.annotation.security.PermitAll;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,6 +19,7 @@ public class AuthController {
     private final AuthenticationService authService;
 
     @PostMapping("/register")
+    @PermitAll
     public ResponseEntity<AuthenticationResponseDTO> register(
             @RequestBody RegisterRequestDTO registerDTO
     ) {
@@ -25,6 +27,7 @@ public class AuthController {
     }
 
     @PostMapping("/authenticate")
+    @PermitAll
     public ResponseEntity<AuthenticationResponseDTO> register(
             @RequestBody AuthRequestDTO authRequestDTO
     ) {
