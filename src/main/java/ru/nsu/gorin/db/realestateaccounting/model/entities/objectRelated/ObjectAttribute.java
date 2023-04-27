@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import ru.nsu.gorin.db.realestateaccounting.model.entities.attribute.Attribute;
 import ru.nsu.gorin.db.realestateaccounting.model.entities.attribute.AttributeValue;
+import ru.nsu.gorin.db.realestateaccounting.model.entities.objectRelated.Object;
 
 import java.io.Serializable;
 
